@@ -14,10 +14,7 @@ router.get('/', (req, res) => {
        }
 })
 .then (dbTagData => {
-  if (!CategoryData) {
-    res.status(404).json({ message: 'No user with this id!' });
-    return;
-  }
+  
   res.json(dbTagData);
 })
 .catch(err => {

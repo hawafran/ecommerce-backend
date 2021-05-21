@@ -81,7 +81,7 @@ router.put('/:id', (req, res) => {
       res.status(404).json({ message: 'No user with this id!' });
       return;
     }
-    res.json(dbCategoryData);
+    res.json(CategoryData);
   })
   .catch(err => {
     console.log(err);

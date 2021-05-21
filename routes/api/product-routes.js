@@ -19,9 +19,9 @@ router.get('/', (req, res) => {
       }
     ]
   })
-  .then (dbProductData => {
+  .then (ProductData => {
       
-    res.json(dbProductData);
+    res.json(ProductData);
   })
   .catch(err => {
     console.log(err);
@@ -49,12 +49,12 @@ router.get('/:id', (req, res) => {
       }
     ]
   })
-  .then (dbProductData => {
-    if (!CategoryData) {
+  .then (ProductData => {
+    if (!ProductData) {
       res.status(404).json({ message: 'No user with this id!' });
       return;
     }
-    res.json(dbProductData);
+    res.json(ProductData);
   })
   .catch(err => {
     console.log(err);
@@ -93,9 +93,9 @@ router.post('/', (req, res) => {
       // if no product tags, just respond
       res.status(200).json(product);
     })
-    .then (dbProductData => {
+    .then (ProductData => {
       
-      res.json(dbProductData);
+      res.json(ProductData);
     })
     .catch(err => {
       console.log(err);
@@ -138,9 +138,9 @@ router.put('/:id', (req, res) => {
         ProductTag.bulkCreate(newProductTags),
       ]);
     })
-    .then (dbProductData => {
+    .then (ProductData => {
       
-      res.json(dbProductData);
+      res.json(ProductData);
     })
     .catch(err => {
       console.log(err);
@@ -155,12 +155,12 @@ router.delete('/:id', (req, res) => {
       id: req.params.id
     }
   })
-  .then (dbProductData => {
-    if (!CategoryData) {
+  .then (ProductData => {
+    if (!ProductData) {
       res.status(404).json({ message: 'No user with this id!' });
       return;
     }
-    res.json(dbProductData);
+    res.json(ProductData);
   })
   .catch(err => {
     console.log(err);

@@ -30,7 +30,7 @@ router.get('/:id', (req, res) => {
   // find one category by its `id` value
   Category.findOne({
     where: {
-      id: req.perams.id
+      id: req.params.id
     },
      // be sure to include its associated Products
     include: {
@@ -73,7 +73,7 @@ router.put('/:id', (req, res) => {
   // update a category by its `id` value
   Category.update(req.body, {
     where: {
-      id: req.perams.id
+      id: req.params.id
     }
   })
   .then (dbCategoryData => {
@@ -93,7 +93,7 @@ router.delete('/:id', (req, res) => {
   // delete a category by its `id` value
   Category.destroy({
     where: {
-      id: req.perams.id
+      id: req.params.id
     }
   })
   .then (dbCategoryData => {
